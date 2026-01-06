@@ -2,7 +2,7 @@
 
 **Last Updated:** 2026-01-06
 **Repository:** seanarnold/Political-leaning
-**Status:** Initial Setup
+**Status:** Active Development - React App Complete
 
 ---
 
@@ -21,10 +21,11 @@
 ## Project Overview
 
 ### Purpose
-This repository is designed for analyzing political leanings in content. The specific scope and implementation details are to be determined based on project requirements.
+This repository contains a Political Compass Survey application - an interactive web tool that analyzes user responses to determine their political position on a two-dimensional compass (Economic Left-Right axis and Social Authoritarian-Libertarian axis).
 
 ### Current State
-- **Status:** Empty repository, initial setup phase
+- **Status:** Active development - React application complete
+- **Application:** Political Compass Survey (political-compass-app/)
 - **Branch:** `claude/add-claude-documentation-OLc0x`
 - **Remote:** http://127.0.0.1:64259/git/seanarnold/Political-leaning
 
@@ -32,26 +33,34 @@ This repository is designed for analyzing political leanings in content. The spe
 
 ## Repository Structure
 
-### Expected Directory Layout
+### Current Directory Layout
 
 ```
 Political-leaning/
-├── CLAUDE.md              # This file - AI assistant guide
-├── README.md              # Project documentation
-├── .gitignore            # Git ignore patterns
-├── LICENSE               # Project license
-├── src/                  # Source code
-│   ├── main/             # Main application code
-│   ├── utils/            # Utility functions
-│   ├── models/           # Data models
-│   └── tests/            # Test files
-├── data/                 # Data files (if applicable)
-├── docs/                 # Additional documentation
-├── config/               # Configuration files
-└── scripts/              # Build and deployment scripts
+├── CLAUDE.md                        # This file - AI assistant guide
+└── political-compass-app/           # React application
+    ├── src/
+    │   ├── components/              # React components
+    │   │   ├── Welcome.jsx          # Landing page
+    │   │   ├── Survey.jsx           # Survey orchestration
+    │   │   ├── Question.jsx         # Individual question display
+    │   │   ├── Progress.jsx         # Progress bar component
+    │   │   ├── Results.jsx          # Results page
+    │   │   └── Compass.jsx          # Political compass visualization
+    │   ├── data/
+    │   │   └── questions.js         # Question bank (36 questions)
+    │   ├── utils/
+    │   │   └── scoring.js           # Scoring algorithms
+    │   ├── App.jsx                  # Main application component
+    │   ├── App.css                  # Application styles
+    │   ├── main.jsx                 # Application entry point
+    │   └── index.css                # Global styles
+    ├── public/                      # Static assets
+    ├── index.html                   # HTML template
+    ├── package.json                 # Project dependencies
+    ├── vite.config.js               # Vite configuration
+    └── README.md                    # Application documentation
 ```
-
-**Note:** This structure is a recommendation. Adjust based on the technology stack chosen.
 
 ---
 
@@ -265,26 +274,61 @@ Types:
 
 ## Technology Stack
 
-### To Be Determined
+### Current Stack
 
-When the technology stack is established, update this section with:
+- **Programming Language:** JavaScript (ES6+)
+- **Framework:** React 19.2.0
+- **Build Tool:** Vite 7.2.4
+- **Package Manager:** npm
+- **Styling:** CSS3 with custom styles (no framework)
+- **Graphics:** SVG for compass visualization
+- **Development Tools:**
+  - ESLint for code quality
+  - Vite HMR for fast development
+  - React DevTools compatible
 
-- **Programming Language(s):** (e.g., Python, JavaScript, TypeScript)
-- **Frameworks:** (e.g., Django, Flask, React, Vue)
-- **Testing Framework:** (e.g., pytest, Jest, Mocha)
-- **Build Tools:** (e.g., webpack, vite, npm, pip)
-- **Database:** (e.g., PostgreSQL, MongoDB, SQLite)
-- **APIs/Services:** (e.g., REST, GraphQL, external APIs)
-- **ML/AI Libraries:** (e.g., scikit-learn, TensorFlow, spaCy)
+### Key Dependencies
+
+```json
+{
+  "react": "^19.2.0",
+  "react-dom": "^19.2.0"
+}
+```
 
 ### Development Setup
 
-When applicable, add:
-- Installation instructions
-- Environment setup
-- Configuration steps
-- Running tests
-- Building for production
+#### Prerequisites
+- Node.js (version 16 or higher)
+- npm or yarn
+
+#### Installation
+```bash
+cd political-compass-app
+npm install
+```
+
+#### Development Commands
+```bash
+# Start dev server (http://localhost:5173)
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run linter
+npm run lint
+```
+
+#### Project Features
+- **36 Political Questions**: Covering economic and social axes
+- **Real-time Scoring**: Client-side calculation (no backend required)
+- **SVG Visualization**: Interactive political compass graph
+- **Responsive Design**: Mobile, tablet, and desktop support
+- **Privacy-First**: No data collection or storage
 
 ---
 
@@ -333,7 +377,8 @@ Update CLAUDE.md when:
 
 ### Version History
 
-- **2026-01-06:** Initial CLAUDE.md creation (empty repository setup)
+- **2026-01-06 (Update 2):** Updated with React application tech stack and structure
+- **2026-01-06 (Initial):** Initial CLAUDE.md creation (empty repository setup)
 
 ---
 
